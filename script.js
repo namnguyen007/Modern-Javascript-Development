@@ -1,16 +1,24 @@
-// Importing Modules
-// import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
-// addToCart('bread', 5);
-// console.log(price);
-// console.log(tq);
-// console.log('Importing module');
+const ShoppingCart2 = (function () {
+  const cart = [];
+  const shippingCost = 10;
+  const totalPrice = 237;
+  const totalQauntity = 23;
 
+  const addToCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(` ${quantity} ${product} added to the cart`);
+  };
+  const orderStock = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(`${quantity} ${product} ordered from supplier`);
+  };
 
-// import * as ShoppingCart from './shoppingCart.js'
-// ShoppingCart.addToCart('bread', 10)
+  return {
+   addToCart,
+   cart,
+   totalPrice,
+   totalQauntity
+  }
+})();
 
-import add, {cart}from './shoppingCart.js';
-add('pizza',3)
-add('bread',13)
-add('wine',35)
-console.log(cart);
+ShoppingCart2.addToCart('pizza',2)
